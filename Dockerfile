@@ -1,9 +1,9 @@
 FROM centos:latest
 RUN yum update -y
-RUN yum install -y epel-release python-pip python-devel python-devel libffi-devel openssl-devel gcc git ntp vim ansible==2.0.0 wget
+RUN yum install -y epel-release python-pip python-devel python-devel libffi-devel openssl-devel gcc git ntp vim ansible==2.2.0 wget
 RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" && python get-pip.py
 RUN curl -sSL https://get.docker.io
-RUN bash && pip install -U ansible==2.0.0
+RUN bash && pip install -U ansible==2.2.0
 RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.7.0/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin
